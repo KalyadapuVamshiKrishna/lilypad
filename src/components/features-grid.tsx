@@ -1,11 +1,5 @@
 import React from "react";
-import { 
-  ShieldCheck, 
-  LineChart, 
-  Search, 
-  PieChart, 
-  Users 
-} from "lucide-react";
+import Image from "next/image";
 
 // ----------------------------------------------------------------------
 // DATA
@@ -23,47 +17,46 @@ const FEATURES = [
   {
     id: "data-driven",
     title: "Become a Data-Driven Investor",
-    description: "Lilypads is the cloud-based real estate investment platform that helps you make data-driven investment decisions.",
-    icon: <ShieldCheck size={28} strokeWidth={1.5} />,
+    description:
+      "Lilypads is the cloud-based real estate investment platform that helps you make data-driven investment decisions.",
+    image: "/images/icon-data.png", 
   },
   {
     id: "smarter-decisions",
     title: "Lilypads can help you make smarter decisions.",
-    description: "Streamline your investment evaluation process and collaborate in reaching your long term investment objectives.",
-    icon: <LineChart size={28} strokeWidth={1.5} />,
+    description:
+      "Streamline your investment evaluation process and collaborate in reaching your long term investment objectives.",
+    image: "/images/icon-manager.png",
   },
   {
     id: "due-diligence",
     title: "Manager Due Diligence",
-    description: "Evaluate managers against your objectives using traditional risk metrics with the addition of factor analysis.",
-    icon: <Search size={28} strokeWidth={1.5} />,
+    description:
+      "Evaluate managers against your objectives using traditional risk metrics with the addition of factor analysis.",
+    image: "/images/icon-optimize.png",
   },
   {
     id: "asset-allocation",
     title: "Optimize Asset Allocation",
-    description: "Understand the underlying risk drivers in your portfolio using Lilypads analysis factors and optimize based on objectives.",
-    icon: <PieChart size={28} strokeWidth={1.5} />,
+    description:
+      "Understand the underlying risk drivers in your portfolio using Lilypads analysis factors and optimize based on objectives.",
+    image: "/images/icon-stack.png",
   },
   {
     id: "subscribers",
     title: "Our Subscribers",
-    description: "Serving global subscribers across pension funds, funds of funds, banks, family offices, and wealth managers.",
-    icon: <Users size={28} strokeWidth={1.5} />,
+    description:
+      "Serving global subscribers across pension funds, funds of funds, banks, family offices, and wealth managers.",
+    image: "/images/icon-subscribers.png",
   },
 ];
 
 export default function FeaturesGrid() {
   return (
-    // Section Background: Matches your design (#f5f4f8)
     <section className="bg-[#f5f4f8] py-20 flex justify-center items-center">
       <div className="mx-auto w-full max-w-[1600px] px-4 lg:px-8">
-        
-        {/* === THE GRID CONTAINER === 
-            1. gap-px: The 1px gap reveals the gradient underneath.
-            2. grid-fade-lines: Applies the sharp, pointy gradient background.
-        */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[4px] grid-fade-lines rounded-sm overflow-hidden">
-          
+
           {/* HEADER CELL */}
           <div className="flex flex-col justify-center bg-[#f5f4f8] p-8 lg:p-12 min-h-[300px]">
             <div className="mb-5 flex items-center gap-3">
@@ -80,22 +73,32 @@ export default function FeaturesGrid() {
           {/* FEATURE CELLS */}
           {FEATURES.map((feature) => (
             <article
-              key={feature.id}
-              className="group flex flex-col items-start justify-center bg-[#f5f4f8] p-8 lg:p-12 hover:bg-white transition-colors duration-200 min-h-[300px]"
-            >
-              <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-white text-[#9f2b45] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] group-hover:scale-105 transition-transform duration-300">
-                {feature.icon}
+            key={feature.id}
+            className="group flex flex-col justify-center bg-[#f5f4f8] p-8 lg:p-12 hover:bg-white transition-colors duration-200 min-h-[300px]"
+          >
+            {/* IMAGE + TITLE ROW */}
+            <div className="flex items-center gap-4 mb-4">
+              <div className="relative h-24 w-24 rounded-full overflow-hidden group-hover:scale-110 transition-transform duration-300">
+                <Image
+                  src={feature.image}
+                  alt={feature.title}
+                  fill
+                  className="object-cover"
+                />
               </div>
-              
-              <h3 className="mb-3 text-lg font-bold text-[#1a1a1a]">
+
+              <h3 className="text-lg font-bold text-[#1a1a1a]">
                 {feature.title}
               </h3>
-              <p className="text-[15px] leading-relaxed text-gray-500">
-                {feature.description}
-              </p>
-            </article>
+            </div>
+
+            {/* DESCRIPTION */}
+            <p className="text-[15px] leading-relaxed text-gray-500">
+              {feature.description}
+            </p>
+          </article>
+
           ))}
-          
         </div>
       </div>
     </section>

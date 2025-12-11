@@ -162,7 +162,7 @@ export function HeroSection() {
       <div 
         className="relative w-full lg:w-[35%] hero-right-fix min-h-[600px] lg:min-h-auto overflow-visible bg-cover bg-center bg-no-repeat"
         style={{ 
-            // 🟢 REPLACE 'your-image.png' below with your actual file name in the public folder
+            
             backgroundImage: "url('/images/right-gackground.png')",
         }}
       >
@@ -170,10 +170,10 @@ export function HeroSection() {
 
         <div className="relative h-full w-full flex items-center justify-center lg:justify-start lg:pl-0">
 
-          <div className="relative z-20 flex gap-10 lg:-ml-100 xl:-ml-20 phone-wrapper-fix items-center">
+          <div className="relative z-20 flex gap-10 lg:-ml-110 xl:-ml-20 phone-wrapper-fix items-center">
 
             {/* PHONE 1 */}
-            <div className="relative w-[220px] sm:w-[300px] lg:w-[300px] xl:w-[380px] shrink-0 transition-transform duration-700 ease-out">
+            <div className="relative w-[220px] sm:w-[300px] lg:w-[300px] xl:w-[340px] shrink-0 transition-transform duration-700 ease-out">
               <Image
                 src="/images/hero-dashboard.png"
                 alt="Dashboard"
@@ -208,7 +208,7 @@ export function HeroSection() {
             </div>
 
             {/* PHONE 2 */}
-            <div className="relative w-[200px] sm:w-[300px] lg:w-[300px] xl:w-[380px] shrink-0 opacity-90 grayscale-[20%] hover:grayscale-0 transition-all duration-700">
+            <div className="relative w-[200px] sm:w-[300px] lg:w-[340px] xl:w-[340px] shrink-0 opacity-90 grayscale-[20%] hover:grayscale-0 transition-all duration-700">
               <Image
                 src="/images/julie-card.png"
                 alt="App Interface"
