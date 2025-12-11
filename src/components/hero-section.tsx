@@ -168,12 +168,15 @@ export function HeroSection() {
       >
 
 
-        <div className="relative h-full w-full flex items-center justify-center lg:justify-start lg:pl-0">
+        <div className="relative h-full w-full p-10  flex items-center justify-center lg:justify-start lg:pl-0">
 
           <div className="relative z-20 flex gap-10 lg:-ml-110 xl:-ml-20 phone-wrapper-fix items-center md:mt-5 sm:mt-10 lg:mt-0">
 
             {/* PHONE 1 */}
-            <div className="relative w-[220px] sm:w-[260px] lg:w-[300px] xl:w-[340px] shrink-0 transition-transform duration-700 ease-out sm:my-6 md:mt-5 sm:mt-6">
+            <div className="relative w-[220px] sm:w-[260px] lg:w-[300px] xl:w-[340px] 
+                shrink-0 transition-transform duration-700 ease-out 
+                p-[5px] sm:p-0 sm:my-6 md:mt-5 sm:mt-6">
+
               <Image
                 src="/images/hero-dashboard.png"
                 alt="Dashboard"
@@ -192,13 +195,16 @@ export function HeroSection() {
                 />
               </div>
 
-              <div className="absolute top-[30%] -left-[60px] sm:-left-[70px] lg:-left-[55px] floating-card-fix z-30 animate-bounce-slow origin-top-right scale-80 sm:scale-90 lg:scale-100 sm:my-4">
+              <div className="absolute top-[30%] -left-[60px] sm:-left-[100px]  lg:-left-[55px] floating-card-fix z-30 animate-bounce-slow origin-top-right scale-80 sm:scale-90 lg:scale-100 sm:my-4">
                 <GemininCard />
               </div>
             </div>
 
             {/* PHONE 2 */}
-            <div className="relative w-[200px] sm:w-[260px] lg:w-[340px] xl:w-[340px] shrink-0 opacity-90 grayscale-[20%] hover:grayscale-0 transition-all duration-700 sm:my-6">
+            <div className="relative w-[220px] sm:w-[260px] lg:w-[340px] xl:w-[340px] 
+                shrink-0 opacity-90 grayscale-[20%] hover:grayscale-0 
+                transition-all duration-700 p-[5px] sm:p-0 sm:my-6">
+
               <Image
                 src="/images/julie-card.png"
                 alt="App Interface"
