@@ -1,0 +1,115 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #8b5cf6;
+  --color-accent: #db2777;
+  --color-dark: #0f172a;
+  --color-surface: #f8fafc;
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+}
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-surface text-dark antialiased;
+}
+
+.gradient-veil {
+  background-image: radial-gradient(
+      circle at 20% 10%,
+      rgba(219, 39, 119, 0.1),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(139, 92, 246, 0.12),
+      transparent 25%
+    );
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-lg border border-white/40 shadow-lg;
+}
+
+@layer utilities {
+  .grid-fade-lines {
+    /* 1. BASE (MOBILE): Only Horizontal Lines are needed.
+       - Logic: We paint a "fading horizontal bar" across the whole background.
+       - Any 'gap-px' between rows will reveal this background. 
+       - Color: rgba(0, 0, 0, 0.5) as requested.
+    */
+    background-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      transparent 100%
+    );
+    background-size: 100% 100%; /* Covers the whole area */
+    background-repeat: no-repeat;
+  }
+
+  /* 2. TABLET (2 Columns): Add 1 Vertical Line in the Center */
+  @media (min-width: 768px) {
+    .grid-fade-lines {
+      background-image: 
+        /* Horizontal Gradient (Background) */
+        linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%),
+        /* Vertical Line (Center) */
+        linear-gradient(to bottom, transparent 20%, rgba(0, 0, 0, 0.5) 50%, transparent 80%);
+      
+      background-size: 100% 100%, 1px 100%;
+      background-position: center center, center center;
+      background-repeat: no-repeat;
+    }
+  }
+
+  /* 3. DESKTOP (3 Columns): Add 2 Vertical Lines at 33% and 66% */
+  @media (min-width: 1024px) {
+    .grid-fade-lines {
+      background-image: 
+        /* Horizontal Gradient (Background) */
+        linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%),
+        /* Vertical Line 1 (Left Gap) */
+        linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%),
+        /* Vertical Line 2 (Right Gap) */
+        linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.5) 50%, transparent 100%);
+
+      background-size: 
+        100% 100%, 
+        1px 100%, 
+        1px 100%;
+
+      background-position: 
+        center center, 
+        calc(100% / 3) 0,   /* Position exactly at the first gap */
+        calc(200% / 3) 0;   /* Position exactly at the second gap */
+        
+      background-repeat: no-repeat;
+    }
+  }
+}
+
+@media (max-width: 1440px) and (min-width: 1024px) {
+  /* Reduce left width to avoid overflow */
+  .hero-left-fix {
+    width: 58% !important; /* previously 65% */
+  }
+
+  /* Increase right width so phone stack overlaps correctly */
+  .hero-right-fix {
+    width: 42% !important;
+  }
+
+  /* Pull phone cluster further left so it covers left area properly */
+  .phone-wrapper-fix {
+    margin-left: -120px !important;
+  }
+
+  /* Scale down floating card to prevent overflow */
+  .floating-card-fix {
+    transform: scale(0.85) !important;
+  }
+}
