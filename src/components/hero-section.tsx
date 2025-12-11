@@ -170,16 +170,16 @@ export function HeroSection() {
 
         <div className="relative h-full w-full flex items-center justify-center lg:justify-start lg:pl-0">
 
-          <div className="relative z-20 flex gap-10 lg:-ml-110 xl:-ml-20 phone-wrapper-fix items-center">
+          <div className="relative z-20 flex gap-10 lg:-ml-110 xl:-ml-20 phone-wrapper-fix items-center md:mt-5 sm:mt-10 lg:mt-0">
 
             {/* PHONE 1 */}
-            <div className="relative w-[220px] sm:w-[260px] lg:w-[300px] xl:w-[340px] shrink-0 transition-transform duration-700 ease-out sm:my-6 md:mt-5">
+            <div className="relative w-[220px] sm:w-[260px] lg:w-[300px] xl:w-[340px] shrink-0 transition-transform duration-700 ease-out sm:my-6 md:mt-5 sm:mt-6">
               <Image
                 src="/images/hero-dashboard.png"
                 alt="Dashboard"
                 width={800}
                 height={1600}
-                className="w-full h-auto rounded-[4.5rem] sm:rounded-[2rem] shadow-2xl"
+                className="w-full h-auto md:rounded-[4.5rem] sm:rounded-[1rem] shadow-2xl"
               />
 
               <div className="absolute bottom-6 left-1/2 w-[85%] -translate-x-1/2 drop-shadow-md z-20">
@@ -204,7 +204,7 @@ export function HeroSection() {
                 alt="App Interface"
                 width={800}
                 height={1600}
-                className="w-full h-auto rounded-[4.5rem] sm:rounded-[2rem] shadow-2xl"
+                className="w-full h-auto md:rounded-[4.5rem] sm:rounded-[1rem] shadow-2xl"
               />
 
               <div className="absolute bottom-6 left-1/2 w-[85%] -translate-x-1/2 drop-shadow-md z-20">
