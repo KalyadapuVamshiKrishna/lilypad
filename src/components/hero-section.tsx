@@ -173,13 +173,13 @@ export function HeroSection() {
           <div className="relative z-20 flex gap-10 lg:-ml-110 xl:-ml-20 phone-wrapper-fix items-center">
 
             {/* PHONE 1 */}
-            <div className="relative w-[220px] sm:w-[300px] lg:w-[300px] xl:w-[340px] shrink-0 transition-transform duration-700 ease-out sm:m-15 md:mt-5 ">
+            <div className="relative w-[220px] sm:w-[260px] lg:w-[300px] xl:w-[340px] shrink-0 transition-transform duration-700 ease-out sm:my-6 md:mt-5">
               <Image
                 src="/images/hero-dashboard.png"
                 alt="Dashboard"
                 width={800}
                 height={1600}
-                className="w-full h-auto rounded-[4.5rem] shadow-2xl"
+                className="w-full h-auto rounded-[4.5rem] sm:rounded-[2rem] shadow-2xl"
               />
 
               <div className="absolute bottom-6 left-1/2 w-[85%] -translate-x-1/2 drop-shadow-md z-20">
@@ -191,30 +191,20 @@ export function HeroSection() {
                   className="w-full h-auto"
                 />
               </div>
-              
-              {/* === CONTROLS FOR FLOATING CARD === 
-                  
-                  1. TO MOVE UP/DOWN: Adjust 'top-[30%]'
-                     - Decrease number (e.g., top-[20%]) -> Moves UP
-                     - Increase number (e.g., top-[40%]) -> Moves DOWN
 
-                  2. TO MOVE LEFT/RIGHT: Adjust '-left-[...]' 
-                     - Make number LARGER (e.g., -left-[150px]) -> Moves LEFT (further out)
-                     - Make number SMALLER (e.g., -left-[50px]) -> Moves RIGHT (closer to phone)
-              */}
-              <div className="absolute top-[30%] -left-[60px] sm:-left-[100px] lg:-left-[55px] floating-card-fix z-30 animate-bounce-slow origin-top-right scale-80 sm:scale-90 lg:scale-100 sm:m-5">
+              <div className="absolute top-[30%] -left-[60px] sm:-left-[70px] lg:-left-[55px] floating-card-fix z-30 animate-bounce-slow origin-top-right scale-80 sm:scale-90 lg:scale-100 sm:my-4">
                 <GemininCard />
               </div>
             </div>
 
             {/* PHONE 2 */}
-            <div className="relative w-[200px] sm:w-[300px] lg:w-[340px] xl:w-[340px] shrink-0 opacity-90 grayscale-[20%] hover:grayscale-0 transition-all duration-700">
+            <div className="relative w-[200px] sm:w-[260px] lg:w-[340px] xl:w-[340px] shrink-0 opacity-90 grayscale-[20%] hover:grayscale-0 transition-all duration-700 sm:my-6">
               <Image
                 src="/images/julie-card.png"
                 alt="App Interface"
                 width={800}
                 height={1600}
-                className="w-full h-auto rounded-[4.5rem] sm:rounded-[1rem] shadow-2xl"
+                className="w-full h-auto rounded-[4.5rem] sm:rounded-[2rem] shadow-2xl"
               />
 
               <div className="absolute bottom-6 left-1/2 w-[85%] -translate-x-1/2 drop-shadow-md z-20">
